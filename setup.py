@@ -15,8 +15,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import sys
 from os.path import dirname, join
+from pip.req import parse_requirements
 
 from setuptools import (
     find_packages,
@@ -24,7 +24,7 @@ from setuptools import (
 )
 
 
-with open(join(dirname(__file__), 'rqalpha/VERSION.txt'), 'rb') as f:
+with open(join(dirname(__file__), 'rqalpha_mod_tushare/VERSION.txt'), 'rb') as f:
     version = f.read().decode('ascii').strip()
 
 setup(
