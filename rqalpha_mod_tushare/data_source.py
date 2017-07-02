@@ -50,7 +50,8 @@ class TushareKDataSource(BaseDataSource):
         else:
             return bar_data.iloc[0].to_dict()
 
-    def history_bars(self, instrument, bar_count, frequency, fields, dt, skip_suspended=True):
+    def history_bars(self, instrument, bar_count, frequency, fields, dt, skip_suspended=True, include_now=False,
+                     adjust_type='pre', adjust_orig=None):
         if frequency != '1d' or not skip_suspended:
             return super(TushareKDataSource, self).history_bars(instrument, bar_count, frequency, fields, dt, skip_suspended)
 
