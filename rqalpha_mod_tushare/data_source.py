@@ -67,7 +67,7 @@ class TushareKDataSource(BaseDataSource):
                 fields = [fields]
             fields = [field for field in fields if field in bar_data.columns]
 
-            return bar_data[fields].as_matrix()
+            return bar_data[fields].as_matrix().flatten()
 
     def available_data_range(self, frequency):
         return date(2005, 1, 1), date.today() - relativedelta(days=1)
