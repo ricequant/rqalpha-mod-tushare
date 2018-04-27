@@ -37,7 +37,9 @@ class TushareKDataSource(BaseDataSource):
         else:
             return None
 
-        return ts.get_k_data(code, index=index, start=start_dt.strftime('%Y-%m-%d'), end=end_dt.strftime('%Y-%m-%d'))
+        return ts.get_k_data(code, index=index, autype='bfq',
+                             start=start_dt.strftime('%Y-%m-%d'),
+                             end=end_dt.strftime('%Y-%m-%d'))
 
     def get_bar(self, instrument, dt, frequency):
         if frequency != '1d':
